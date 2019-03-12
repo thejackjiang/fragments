@@ -1,13 +1,26 @@
 const typeDefs = `
   type Query {
-    allUsers: [User]
+    AllPokemon: [Pokemon] 
   }
 
-  type User {
-    _id: ID
-    firstName: String,
-    lastName: String
+  type Pokemon{
+    id: ID
+    name: String
+    back_default: String
+    back_shiny: String
+    front_default: String
+    front_shiny: String
+    types: [String]
+    weight: String
+    height: String
+    speed: String
+    specialAttack: String
+    specialDefense: String
+    defense: String
+    attack: String
+    hp: String
   }
+
 `
 
 module.exports = typeDefs;
