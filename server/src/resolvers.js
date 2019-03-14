@@ -49,10 +49,29 @@ const parseSinglePokemonInfo = ({ data }) => {
   }
 }
 
+const trickledResolvers = {
+  id: (parent) => parent.id ,
+  name: (parent) => parent.name ,
+  back_default: (parent) => parent.back_default ,
+  back_shiny: (parent) => parent.back_shiny ,
+  front_default: (parent) => parent.front_default ,
+  front_shiny: (parent) => parent.front_shiny ,
+  weight: (parent) => parent.weight ,
+  height: (parent) => parent.height ,
+  types: (parent) => parent.types ,
+  speed: (parent) => parent.speed ,
+  specialAttack: (parent) => parent.specialAttack ,
+  specialDefense: (parent) => parent.specialDefense ,
+  defense: (parent) => parent.defense ,
+  attack: (parent) => parent.attack ,
+  hp: (parent) => parent.hp 
+}
+
 const resolvers = {
   Query: {
     AllPokemon: allPokemon
   },
+  Pokemon: trickledResolvers
 }
 
 module.exports = resolvers;
